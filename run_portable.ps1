@@ -10,9 +10,9 @@ param(
     [Parameter(ValueFromRemainingArguments=$true)][string[]]$Args
 )
 
-$root = Split-Path $PSScriptRoot -Parent
-$python = Join-Path $PSScriptRoot "PythonPortable\python.exe"
-$yara = Join-Path $PSScriptRoot "YARA\yara64.exe"
+$root = $PSScriptRoot
+$python = Join-Path $PSScriptRoot "tools\PythonPortable\python.exe"
+$yara = Join-Path $PSScriptRoot "tools\YARA\yara64.exe"
 
 switch ($Tool.ToLower()) {
     "yara"     { & $yara @Args }

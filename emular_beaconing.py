@@ -9,8 +9,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 random.seed(20261106)
-ROOT = Path(__file__).resolve().parent.parent
-OUTDIR = ROOT / "fase2_emulacion_localhost"
+ROOT = Path(__file__).resolve().parent
+OUTDIR = ROOT / "fase2_dinamico"
 OUTDIR.mkdir(exist_ok=True)
 
 SHAPE = [0.00, 0.35, 0.70, 1.00, 1.55, 2.30, 3.20]

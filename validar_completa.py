@@ -6,10 +6,10 @@ Genera set limpio sintético (docx/xlsx benignos) y set positivo SIMULADO
 import csv, hashlib, random, shutil, subprocess, zipfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 YARA = ROOT / "tools" / "YARA" / "yara64.exe"
 REGLAS = ROOT / "reglas.yar"
-VAL = ROOT / "validacion_completa"
+VAL = ROOT / "validacion_dinamica"
 LIMPIO = VAL / "set_limpio"
 POS = VAL / "set_positivo_simulado"
 CIEGO = VAL / "prueba_ciega"

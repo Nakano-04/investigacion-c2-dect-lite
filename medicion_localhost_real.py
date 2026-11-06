@@ -11,8 +11,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
 random.seed(20261106)
-ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "fase2_emulacion_localhost" / "medicion_real_localhost.csv"
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "medicion_real_localhost.csv"
 OUT.parent.mkdir(exist_ok=True)
 
 class H(BaseHTTPRequestHandler):

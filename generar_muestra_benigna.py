@@ -5,7 +5,7 @@ No contiene VBA, no es ejecutable como macro, solo es un zip OOXML limpio.
 import zipfile
 from pathlib import Path
 
-out = Path(__file__).resolve().parent.parent / "lab_artefactos" / "benigno_limpio.docx"
+out = Path(__file__).resolve().parent / "benigno_limpio.docx"
 out.parent.mkdir(exist_ok=True)
 
 content_types = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
