@@ -1,0 +1,4 @@
+SIMULACION
+Document_Open
+WScript.Shell
+https://example.invalid/

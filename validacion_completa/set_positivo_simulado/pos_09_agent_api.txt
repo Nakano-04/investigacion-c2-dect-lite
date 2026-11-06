@@ -1,0 +1,5 @@
+SIMULACION
+AGENT-EXEC
+/api/sessions
+/api/audit/verify
+/api/scripts/pubkey

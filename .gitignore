@@ -1,0 +1,25 @@
+# Binarios pesados portables (descargar por link, no subir a git)
+tools/PythonPortable/
+tools/YARA/
+tools/VirtualBoxPortable/*.exe
+*.pcap
+*.docx
+*.xlsx
+*.bin
+*.exe
+*.lua
+!lab_artefactos/ejemplo_lua_benigno.lua
+__pycache__/
+*.pyc
+.env
+*.db
+agent.json
+validacion_completa/prueba_ciega/
+validacion_completa/set_limpio/
+validacion_completa/set_positivo_simulado/pos_01*
+validacion_completa/set_positivo_simulado/pos_02*
+validacion_completa/set_positivo_simulado/pos_03*
+validacion_completa/set_positivo_simulado/pos_04*
+validacion_completa/set_positivo_simulado/pos_11*
+set_limpio/
+lab_artefactos/*.docx

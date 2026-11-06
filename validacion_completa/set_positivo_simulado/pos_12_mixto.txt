@@ -1,0 +1,5 @@
+SIMULACION
+c2.task
+c2.fs.read
+c2.session_id
+-- scope:

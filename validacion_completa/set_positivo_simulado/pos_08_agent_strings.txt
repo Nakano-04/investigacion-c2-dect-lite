@@ -1,0 +1,6 @@
+SIMULACION
+c2-dect-lite v1 aes
+/agent/checkin
+/agent/task/result
+.c2-dect-lite
+agent.json

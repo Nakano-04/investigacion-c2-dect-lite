@@ -1,0 +1,5 @@
+SIMULACION NO EJECUTABLE
+AutoOpen
+Shell
+CreateObject
+http://127.0.0.1/

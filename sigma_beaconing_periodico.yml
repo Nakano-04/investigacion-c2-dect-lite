@@ -1,0 +1,38 @@
+title: Beaconing periódico sospechoso desde proceso Office o Go
+id: 00000000-0000-0000-0000-000000000001
+status: experimental
+description: Detecta conexiones de red periódicas con intervalo regular y tamaño similar, típico de beaconing de simulación. Complementa YARA (YARA no ve red).
+author: Investigacion C2-DECT Lite
+references:
+  - agent/jitter.go (uniform/activity)
+  - agent/transport.go (/agent/checkin)
+level: medium
+tags:
+  - attack.command_and_control
+  - attack.t1071.001
+  - attack.t1204.002
+logsource:
+  product: windows
+  category: network_connection
+  definition: 'Sysmon Event 3 o firewall/EDR con proceso y destino'
+detection:
+  selection:
+    Image|endswith:
+      - '\WINWORD.EXE'
+      - '\EXCEL.EXE'
+      - '\agent.exe'
+    DestinationPort: 8443
+  timeframe: 10m
+  aggregation:
+    - field: SourceIp
+    - field: DestinationIp
+    - field: DestinationPort
+    - agg: count() by SourceIp, DestinationIp, DestinationPort
+    - condition: count() >= 6
+  condition: selection and aggregation
+falsepositives:
+  - Actualizaciones de Office
+  - Telemetría legítima de aplicaciones
+level: medium
+# Nota: esto es plantilla Sigma. Ajusta a tu fuente real (Sysmon/Zeek/Suricata).
+# Para periodicidad real usa Zeek/Suricata con ventana temporal, no solo conteo.

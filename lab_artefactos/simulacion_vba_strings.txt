@@ -1,0 +1,8 @@
+SIMULACION PARA PRUEBA YARA - NO ES UNA MACRO EJECUTABLE
+Archivo de texto con strings sospechosos para validar deteccion.
+AutoOpen
+Document_Open
+Shell
+CreateObject
+WScript.Shell
+http://127.0.0.1:8443/agent/checkin
