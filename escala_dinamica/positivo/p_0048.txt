@@ -1,3 +1,0 @@
--- scope: lab-only
-c2.log(c2.session_id())
-c2.task("sysinfo")
