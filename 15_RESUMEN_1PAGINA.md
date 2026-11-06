@@ -1,4 +1,4 @@
-# Emulación y detección defensiva de C2-DECT Lite — Resumen 1 página
+﻿# Emulación y detección defensiva de C2-DECT Lite - Resumen 1 página
 
 **2026-11-06 · Lab local sin admin · Informe completo en `14_INFORME_FINAL_PUBLICABLE.md`**
 
@@ -32,3 +32,4 @@ Set sintético pequeño, emulación matemática (no agent real), sin VM/Sysmon/N
 ```
 
 *Solo lab propio, sin payload real. Framework Non-Commercial de su autor, no redistribuido.*
+

@@ -1,4 +1,4 @@
-# Matriz de impacto — C2-DECT Lite 2.0.0 (medición en lab)
+﻿# Matriz de impacto - C2-DECT Lite 2.0.0 (medición en lab)
 
 | Escenario | Probabilidad lab | Impacto | Detección esperada | Evidencia |
 |-----------|------------------|---------|--------------------|-----------|
@@ -17,3 +17,4 @@
 - El diseño Lite es deliberadamente de letalidad baja-media: por defecto solo lee/mueve ficheros.
 - El riesgo real en lab no es el agent en sí, sino: falta de TLS, secreto JWT mal custodiado, y persistencia de identidad.
 - La detección más fiable no es una sola firma, es correlación: proceso + archivo de estado + beacon periódico + endpoint `/agent/checkin`.
+

@@ -1,5 +1,5 @@
-# Validación completa (Punto 1 checklist publicación)
-Fecha: 2026-11-06 — RUN-006
+﻿# Validación completa (Punto 1 checklist publicación)
+Fecha: 2026-11-06 - RUN-006
 
 ## Qué se validó
 Reglas YARA v1.1 (`reglas.yar`) con YARA 4.6.0 portable, sin admin, sin ejecutar muestras.
@@ -19,7 +19,7 @@ Resumen automático: `validacion_completa/RESUMEN_VALIDACION.md`
 
 ## Prueba ciega
 Copias con nombre anonimizado por hash, orden aleatorio:
-- TP ciega 12, FN 0, FP 0, TN 33 — idéntico al no ciego.
+- TP ciega 12, FN 0, FP 0, TN 33 - idéntico al no ciego.
 
 ## Hits por regla (positivo)
 - C2_DECT_Lite_Agent_Artifact: lua mínimo, lua fs, lua crypto, lua scope, mixto, agent_strings, agent_api
@@ -32,7 +32,7 @@ Copias con nombre anonimizado por hash, orden aleatorio:
 C2_DECT_Lite_Lua_Script: de 3 a 2 de 7 strings. Motivo: ejemplo mínimo oficial solo tiene c2.log + c2.task(. Los strings c2.* son específicos del framework, 2 mantiene precisión en este set.
 
 ## Interpretación honesta
-Perfecto en set sintético controlado es esperado — no es rendimiento en producción.
+Perfecto en set sintético controlado es esperado - no es rendimiento en producción.
 Para publicar en foro/conferencia falta:
 - Set limpio REAL (macros legítimas de empresas, n=100+)
 - Datasets públicos positivos o PCAPs reales de lab
@@ -43,3 +43,4 @@ Este resultado valida el *flujo* y la *precisión inicial*, no un detector listo
 ## Conclusión
 Punto 1 del checklist: **completado en modo piloto sintético**.
 Siguiente: Fase 2 medición localhost y ampliar set real antes de publicar.
+

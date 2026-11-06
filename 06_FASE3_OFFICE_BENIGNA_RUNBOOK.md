@@ -1,4 +1,4 @@
-# Fase 3 — Emulación Office benigna (lab aislado)
+﻿# Fase 3 - Emulación Office benigna (lab aislado)
 
 Objetivo: medir detección de macro Office sin carga útil real.
 
@@ -30,3 +30,4 @@ Objetivo: medir detección de macro Office sin carga útil real.
 
 ## Cierre
 Muestra destruida tras la corrida. Solo quedan hash, oletools, PCAP y logs en la carpeta de investigación.
+

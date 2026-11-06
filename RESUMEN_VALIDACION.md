@@ -1,4 +1,4 @@
-# Validación completa — resultados
+﻿# Validación completa - resultados
 Fecha: 2026-11-06
 Herramientas: YARA 4.6.0 portable, Python portable
 
@@ -41,3 +41,4 @@ Office_Macro_Sospechosa_Generica C:\Users\BALDEONSARMIENTOLUIS\Documents\Proyect
 - Set limpio sintético, no macros reales de empresas. Falta set real de contabilidad/reportes.
 - Set positivo simulado son textos/lua, no binarios ni macros ejecutables (por diseño, sin payload).
 - n=33 limpio / 12 positivo es buen piloto, no producción. Para publicar en conferencia ampliar a 100+ y datasets públicos.
+

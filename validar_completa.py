@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Validación completa y reproducible — sin admin, sin ejecutar muestras.
+﻿#!/usr/bin/env python3
+"""Validación completa y reproducible - sin admin, sin ejecutar muestras.
 Genera set limpio sintético (docx/xlsx benignos) y set positivo SIMULADO
 (texto/lua no ejecutable), corre YARA portable y mide FP/FN.
 """
@@ -132,7 +132,7 @@ with open(csv_path, "w", newline="", encoding="utf-8") as f:
     for p in sorted(LIMPIO.glob("*")): w.writerow(["limpio", p.name, sha256(p), p.name in limpio_hits, ";".join(limpio_hits.get(p.name,[]))])
     for p in sorted(POS.glob("*")): w.writerow(["positivo_simulado", p.name, sha256(p), p.name in pos_hits, ";".join(pos_hits.get(p.name,[]))])
 
-summary = f"""# Validación completa — resultados
+summary = f"""# Validación completa - resultados
 Fecha: 2026-11-06
 Herramientas: YARA {subprocess.run([str(YARA),'--version'],capture_output=True,text=True).stdout.strip()} portable, Python portable
 
@@ -165,3 +165,4 @@ Positivo: {pos_out.strip() or '(ninguno)'}
 (VAL / "RESUMEN_VALIDACION.md").write_text(summary, encoding="utf-8")
 print(summary)
 print(f"CSV: {csv_path}")
+

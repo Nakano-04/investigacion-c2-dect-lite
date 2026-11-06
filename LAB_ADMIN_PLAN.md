@@ -1,4 +1,4 @@
-# Lab con VMs y admin real — plan
+﻿# Lab con VMs y admin real - plan
 
 Fecha: 2026-11-06
 Objetivo: pasar del modo portable sin admin al modo completo con VMs aisladas para medir tráfico real, Sysmon y PCAP en vivo.
@@ -45,5 +45,6 @@ Host Windows (admin para instalar VirtualBox)
 - [ ] Aceptar UAC en instalación VirtualBox
 - [ ] `VBoxManage --version` OK en host admin
 - [ ] vboxnet0 192.168.56.1 creado
-- [ ] ISOs descargadas (Ubuntu, Windows eval) — links oficiales
+- [ ] ISOs descargadas (Ubuntu, Windows eval) - links oficiales
 - [ ] Snapshots base creados
+

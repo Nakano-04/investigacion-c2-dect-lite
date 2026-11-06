@@ -1,9 +1,9 @@
-# Emulación y detección defensiva de C2-DECT Lite 2.0.0 y macros Office
-## Informe técnico — investigación en laboratorio local sin administrador
+﻿# Emulación y detección defensiva de C2-DECT Lite 2.0.0 y macros Office
+## Informe técnico - investigación en laboratorio local sin administrador
 
 **Fecha:** 2026-11-06
 **Autor:** Equipo de investigación defensiva (lab local)
-**Versión:** 1.0 — para publicación como informe técnico / repo de investigación
+**Versión:** 1.0 - para publicación como informe técnico / repo de investigación
 **Licencia:** CC-BY 4.0 para este informe. El framework analizado es Non-Commercial de su autor; no se redistribuye su código.
 
 > **Aviso ético:** Investigación solo en laboratorio propio, red localhost, sin carga útil real, sin evasión, sin terceros. Herramientas portables en modo usuario, sin instalación en el sistema.
@@ -33,11 +33,11 @@ Este proyecto se planteó desde 0 como investigación defensiva: emular, medir i
 - Herramientas portables en modo usuario, borrables con la carpeta.
 
 ## 3. Metodología
-1. **Inventario estático** — lectura de código/docs de la copia local 2.0.0 (ver `03_FASE1...`).
-2. **Lab local sin admin** — YARA 4.6.0 portable, Python 3.12.10 embeddable + oletools 0.60.2 + scapy 2.8.0 (ver `09_LAB...`).
-3. **Análisis estático Office** — muestra benigna .docx sin macros, oleid/olevba + YARA (RUN-005).
-4. **Validación completa** — generación sintética reproducible, YARA, métricas FP/FN, prueba ciega (RUN-006, `tools/validar_completa.py`).
-5. **Emulación timing** — réplica de `jitter.go` en Python, PCAP sintético manual, análisis offline (RUN-007, `tools/emular_beaconing.py`).
+1. **Inventario estático** - lectura de código/docs de la copia local 2.0.0 (ver `03_FASE1...`).
+2. **Lab local sin admin** - YARA 4.6.0 portable, Python 3.12.10 embeddable + oletools 0.60.2 + scapy 2.8.0 (ver `09_LAB...`).
+3. **Análisis estático Office** - muestra benigna .docx sin macros, oleid/olevba + YARA (RUN-005).
+4. **Validación completa** - generación sintética reproducible, YARA, métricas FP/FN, prueba ciega (RUN-006, `tools/validar_completa.py`).
+5. **Emulación timing** - réplica de `jitter.go` en Python, PCAP sintético manual, análisis offline (RUN-007, `tools/emular_beaconing.py`).
 
 ## 4. Inventario (resumen)
 - **Comandos cerrados:** 15 read, 6 write, 4 impact con doble puerta (`AGENT-EXEC` + `-allow-impact`).
@@ -115,10 +115,11 @@ PCAP sintético 200 pkts: media 13.22s, jitter medido 66.4%, tamaño 43B constan
 Se completó el ciclo desde 0: inventario, lab portable sin admin, análisis estático, validación medida y emulación de timing, con reglas YARA derivadas de evidencia. Es publicable como informe técnico defensivo con las limitaciones declaradas. El siguiente paso para uso en producción es set real amplio y tráfico real en lab aislado.
 
 ## Referencias
-- C2-DECT Lite 2.0.0 — Nakano-04/c2-dect-lite (README, CHANGELOG, FAQ, docs/SCRIPTING_LITE.md)
+- C2-DECT Lite 2.0.0 - Nakano-04/c2-dect-lite (README, CHANGELOG, FAQ, docs/SCRIPTING_LITE.md)
 - MITRE ATT&CK: T1566.001, T1204.002, T1071.001, T1059
 - YARA 4.6.0, oletools 0.60.2, Python 3.12.10, scapy 2.8.0
 - Archivos del proyecto: 00-13, reglas.yar, tools/, validacion_completa/, fase2_emulacion_localhost/
 
 ---
 *Informe generado 2026-11-06. Revisar checklist 11_CHECKLIST_PUBLICACION.md para pendientes de publicación amplia.*
+

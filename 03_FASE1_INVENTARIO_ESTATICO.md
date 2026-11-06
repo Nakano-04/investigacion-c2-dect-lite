@@ -1,4 +1,4 @@
-# Fase 1 — Inventario estático (sin ejecución)
+﻿# Fase 1 - Inventario estático (sin ejecución)
 Fuente: `C:\Users\BALDEONSARMIENTOLUIS\Desktop\test\c2-dect-lite-2.0.0`
 Fecha: 2026-11-06
 Método: lectura de código y docs. No se compiló ni ejecutó agent/server.
@@ -14,7 +14,7 @@ Método: lectura de código y docs. No se compiló ni ejecutó agent/server.
   - `scripts/` : e2e.ps1, gui_smoke.ps1
   - `docs/SCRIPTING_LITE.md`
 
-## 2. Catálogo de comandos — `agent/catalog.go`
+## 2. Catálogo de comandos - `agent/catalog.go`
 Catálogo cerrado y compartido con `server/api/commands.go`. Comando desconocido se rechaza, no cae a shell.
 
 | Nivel | Comandos | Gate |
@@ -31,7 +31,7 @@ Medición representativa:
 
 Alias observados: ps->processes, connections->netstat, ls->dir, cat->type, cp->copy, rm->del, mv->move, find->search
 
-## 3. Transporte y endpoints — `agent/transport.go`, README
+## 3. Transporte y endpoints - `agent/transport.go`, README
 - Crypto: ECDH P-256 + HKDF-SHA256 + AES-256-GCM
 - `kdfInfo = "c2-dect-lite v1 aes"` <- string estable para YARA
 - Rotación cada `C2_KEY_ROTATION_EVERY` (defecto 200, 3 en e2e)
@@ -48,14 +48,14 @@ Alias observados: ps->processes, connections->netstat, ls->dir, cat->type, cp->c
 - Perfiles malleables en `server/profiles/malleable.go`:
   - URIs: `/api/update`, `/login`, `/dashboard/data`, `/v1/telemetry`, `/api/v2/events`
 
-## 4. Timing / beaconing — `agent/jitter.go`, `main.go`
+## 4. Timing / beaconing - `agent/jitter.go`, `main.go`
 Defecto agent: `127.0.0.1:8443`, Sleep 10s, Jitter 30%, modo `activity`
 - Modos: `uniform`, `activity` (diurno), `none`
 - `activityFactor`: 1.0 en 9-18h, 1.35 / 1.8 / 2.4 en noche, cola derecha pesada 0.35-3.20
 - Backoff exponencial ante fallo, techo 5 min
 - Expiry opcional `-e`, identidad persistente
 
-## 5. Scripting Lite — `docs/SCRIPTING_LITE.md`, `agent/scripting.go`
+## 5. Scripting Lite - `docs/SCRIPTING_LITE.md`, `agent/scripting.go`
 - Lua firmado Ed25519, sandbox por denegación: sin `os, io, debug, package, require, loadstring, dofile, loadfile, load, collectgarbage`
 - API `c2.*`: log, sleep (máx 120s), args, session_id, script_id, beacon, task, fs.list/read/stat, proc.list, sys.info/env, net.info/conns, crypto.sha256/b64encode/b64decode/rand
 - Límites: timeout 30s (máx 5 min), salida 1 MiB, fs.read 256 KiB, sleep 120s por llamada
@@ -63,7 +63,7 @@ Defecto agent: `127.0.0.1:8443`, Sleep 10s, Jitter 30%, modo `activity`
 - Impacto sigue gated por `-allow-impact`
 
 ## 6. Estado en disco
-- `~/.c2-dect-lite/agent.json` (0600, dir 0700) — identidad de sesión sobrevive restart (`agent/main.go: defaultStatePath`)
+- `~/.c2-dect-lite/agent.json` (0600, dir 0700) - identidad de sesión sobrevive restart (`agent/main.go: defaultStatePath`)
 - `~/.c2-dect-lite/data/` (`agent/platform.go`)
 - Server SQLite: `c2-dect-lite.db` por defecto
 - Refresh token consola protegido con DPAPI
@@ -84,3 +84,4 @@ Ver `reglas.yar` actualizado con:
 
 ## Conclusión Fase 1
 Inventario completo sin ejecución. Listo para Fase 2 (emulación en lab aislado) y Fase 3 (Office benigna).
+

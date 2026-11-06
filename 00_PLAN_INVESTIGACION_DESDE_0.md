@@ -1,4 +1,4 @@
-# Investigación defensiva desde 0 — C2-DECT Lite
+﻿# Investigación defensiva desde 0 - C2-DECT Lite
 ## Emulación, medición de impacto y regla YARA
 
 Fecha inicio: 2026-11-06
@@ -14,44 +14,44 @@ H3: Una macro benigna de Office que intenta red/proceso hijo es detectable por t
 
 ### 3. Fases desde 0
 
-**Fase 0 — Autorización y laboratorio**
+**Fase 0 - Autorización y laboratorio**
 - [ ] Autorización escrita del lab
 - [ ] 2 VMs: atacante-lab (server) y víctima-lab (agent/Office), red host-only
 - [ ] Snapshots limpios antes de cada corrida
 - [ ] Sin salida a internet, sin subir muestras a VT
 - Ver: `01_CHECKLIST_LABORATORIO.md`
 
-**Fase 1 — Inventario estático (sin ejecutar nada)**
+**Fase 1 - Inventario estático (sin ejecutar nada)**
 - [ ] Revisar estructura local: `agent/`, `server/`, `gui/C2Dect/`, `scripttrust/`, `scripts/e2e.ps1`, `docs/SCRIPTING_LITE.md`
 - [ ] Extraer catálogo de comandos de `agent/catalog.go` (read/write/impact, doble puerta AGENT-EXEC + -allow-impact)
 - [ ] Extraer endpoints y transporte de `agent/transport.go` (`/agent/checkin`, `kdfInfo = "c2-dect-lite v1 aes"`)
 - [ ] Tomar hashes SHA256 de fuentes/binarios de lab
 - Entregable: tabla de indicadores en `02_PLANTILLA_MEDICION.md`
 
-**Fase 2 — Emulación de beaconing**
+**Fase 2 - Emulación de beaconing**
 - [ ] Usar el harness del propio repo `scripts/e2e.ps1` en lab (26 checks: health, login, registro de agent, tasking sysinfo, gate de impacto, auditoría)
 - [ ] Capturar PCAP solo de la red host-only
 - [ ] Medir: intervalo, jitter, backoff, tamaño de paquetes, rotación de clave
 - [ ] No ejecutar comandos `impact` sin doble consentimiento documentado
 
-**Fase 3 — Emulación Office benigna**
+**Fase 3 - Emulación Office benigna**
 - [ ] Muestra benigna que solo escribe marcador en `C:\Temp` y/o contacta listener local
 - [ ] Activar Sysmon, Defender, log de macros, Vista protegida
 - [ ] Analizar estáticamente con oletools (`oleid`, `olevba`) antes de abrir
 - [ ] Detonar en VM víctima, capturar Sysmon 1/11 y PCAP
 
-**Fase 4 — Medición de impacto**
+**Fase 4 - Medición de impacto**
 - Completar `02_PLANTILLA_MEDICION.md` por cada corrida
 - Impacto si el server simulado se compromise: JWT, SQLite, auditoría, falta de TLS visible en PCAP
 - Impacto si el agent es detectado: proceso, archivo de estado `~/.c2-dect-lite/agent.json`, red local
 
-**Fase 5 — YARA + Sigma**
+**Fase 5 - YARA + Sigma**
 - [ ] Crear reglas desde indicadores observados (no desde evasión)
 - [ ] Validar contra benignas, macros legítimas y limpios -> medir falsos positivos
 - Ver: `reglas.yar`
 - [ ] Complementar con Sigma para beaconing (YARA no detecta conexiones)
 
-**Fase 6 — Documentación final**
+**Fase 6 - Documentación final**
 - [ ] Informe: resumen, alcance, metodología, cronología, indicadores, gaps, YARA, recomendaciones
 - [ ] Anexos: hashes, PCAP recortado, logs Sysmon, salida oletools
 
@@ -65,3 +65,4 @@ H3: Una macro benigna de Office que intenta red/proceso hijo es detectable por t
 - No se desarrolla payload oculto, ni inyección, ni evasión.
 - No se usa contra sistemas de terceros.
 - Todo artefacto malicioso-like se destruye al cerrar el lab.
+

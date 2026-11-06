@@ -1,4 +1,4 @@
-# Checklist para publicar — estado 2026-11-06
+﻿# Checklist para publicar - estado 2026-11-06
 
 ## Ya hecho
 - [x] Plan desde 0, inventario estático Fase 1 grabado
@@ -55,3 +55,4 @@
 ## Estimación
 Con Fase 2 medida + set ampliado + informe final, es publicable como informe técnico / repo de investigación defensiva.
 Sin eso, hoy es un buen borrador interno, no una publicación.
+

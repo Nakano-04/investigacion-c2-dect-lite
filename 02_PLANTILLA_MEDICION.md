@@ -1,4 +1,4 @@
-# Plantilla de medición — una por corrida
+﻿# Plantilla de medición - una por corrida
 
 ## Corrida
 - ID: `RUN-___`
@@ -36,3 +36,4 @@
 - Falsos positivos en set limpio:
 
 ## Conclusión de la corrida
+

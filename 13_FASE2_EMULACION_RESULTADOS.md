@@ -1,4 +1,4 @@
-# Fase 2 — Emulación localhost de timing: resultados (RUN-007)
+﻿# Fase 2 - Emulación localhost de timing: resultados (RUN-007)
 Fecha: 2026-11-06
 Modo: local sin admin, sin ejecutar agent/server real (sin Go en host)
 
@@ -32,7 +32,7 @@ Backoff base 10s: 10,20,40,80,160,300,300,300,300,300
 
 ## Interpretación defensiva
 - uniform es fácilmente detectable por ventana ±30% sobre base.
-- activity tiene cola derecha pesada y jitter alto, pero mantiene destino único, tamaño constante y cambio diurno — detectable por distribución, no por intervalo único.
+- activity tiene cola derecha pesada y jitter alto, pero mantiene destino único, tamaño constante y cambio diurno - detectable por distribución, no por intervalo único.
 - none es beacon perfecto, detección trivial.
 - backoff exponencial es firma temporal reconocible tras fallos.
 
@@ -42,3 +42,4 @@ Backoff base 10s: 10,20,40,80,160,300,300,300,300,300
 
 ## Limitación honesta
 Emulación matemática, no tráfico real del agent. Para evidencia real: correr e2e en lab aislado con Go portable en VM y re-analizar PCAP con el mismo script. El pipeline de medición ya está validado end-to-end (generación -> PCAP -> análisis).
+

@@ -1,4 +1,4 @@
-# Fase 2 — Emulación de beaconing (lab aislado, medición)
+﻿# Fase 2 - Emulación de beaconing (lab aislado, medición)
 
 Objetivo: medir periodicidad, jitter y detección del transporte de simulación
 sin ejecutar nada en el host principal.
@@ -47,3 +47,4 @@ sin ejecutar nada en el host principal.
 ## Criterio de cierre
 PCAP + logs Sysmon + plantilla completada + snapshot revertido.
 No se deja server/agent corriendo tras la corrida.
+

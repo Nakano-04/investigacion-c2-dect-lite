@@ -1,4 +1,4 @@
-# Lab en Oracle VM VirtualBox — instalación y VMs
+﻿# Lab en Oracle VM VirtualBox - instalación y VMs
 
 Fecha: 2026-11-06
 Estado instalación automática: fallida 2 veces
@@ -61,3 +61,4 @@ Si quieres reintentar, hazlo en PowerShell como administrador y acepta el UAC.
 - Fase 2: server en lab-server, agent en lab-victima, solo Host-Only
 - Fase 3: Office benigna en lab-victima, listener local en lab-server
 - Cada corrida: anotar en 04_RUN_LOG.md, capturar, exportar evidencia, revertir snapshot
+

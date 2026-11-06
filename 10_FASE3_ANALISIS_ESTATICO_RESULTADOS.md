@@ -1,4 +1,4 @@
-# Fase 3 — Análisis estático: resultados (RUN-005)
+﻿# Fase 3 - Análisis estático: resultados (RUN-005)
 Fecha: 2026-11-06
 Modo: local sin admin, herramientas portables
 
@@ -37,7 +37,7 @@ Office_Macro_Sospechosa_Generica  simulacion_vba_strings.txt
 ```
 - Lua benigno detectado por `c2.task`, `c2.session_id`, `-- scope:` -> regla Agent_Artifact OK.
 - Texto de simulación detectado por regla Office_Macro -> OK para strings AutoOpen/Shell/CreateObject/http.
-- Nota: `C2_DECT_Lite_Lua_Script` no disparó en ejemplo mínimo (necesita 3 de 7 strings, ejemplo tiene 2). Sugerencia: bajar a 2 o añadir `c2.log` ya cuenta — revisar en validación FPR.
+- Nota: `C2_DECT_Lite_Lua_Script` no disparó en ejemplo mínimo (necesita 3 de 7 strings, ejemplo tiene 2). Sugerencia: bajar a 2 o añadir `c2.log` ya cuenta - revisar en validación FPR.
 
 ### set_limpio/ (copia de benigno_limpio.docx)
 - Sin hits. **0 falsos positivos en set limpio de prueba (n=1).**
@@ -50,3 +50,4 @@ Office_Macro_Sospechosa_Generica  simulacion_vba_strings.txt
 
 ## Próximo paso
 Fase 2 localhost: medir beaconing local con logs de server/agent (sin Npcap) o análisis PCAP offline cuando se capture en lab.
+

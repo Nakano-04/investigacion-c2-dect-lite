@@ -1,4 +1,4 @@
-# Para publicar este repo — qué incluir y qué no
+﻿# Para publicar este repo - qué incluir y qué no
 
 ## Incluir
 - 00_*.md a 14_*.md, README.md, PUBLICACION_README.md
@@ -23,3 +23,4 @@
 - [ ] Revisar que ningún archivo contiene credenciales reales
 - [ ] Probar clon limpio + descarga portables + validación en 10 min
 - [ ] Revisión por par
+

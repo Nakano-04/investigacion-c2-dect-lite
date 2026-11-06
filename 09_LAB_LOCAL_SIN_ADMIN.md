@@ -1,4 +1,4 @@
-# Lab local sin admin — decisión 2026-11-06
+﻿# Lab local sin admin - decisión 2026-11-06
 
 El usuario pidió: todo local, sin admin, portable.
 VirtualBox (instalado y portable) requiere admin para drivers/servicios, por lo que se descarta para este modo.
@@ -19,13 +19,13 @@ VirtualBox (instalado y portable) requiere admin para drivers/servicios, por lo 
 - Verificado: `python.exe -m oletools.olevba --help` OK, `import scapy` 2.8.0 OK
 
 ## Qué se puede hacer sin admin
-- [x] Análisis estático de Office con oletools (oleid/olevba) — no ejecuta macros
+- [x] Análisis estático de Office con oletools (oleid/olevba) - no ejecuta macros
 - [x] YARA portable contra archivos
 - [x] Análisis PCAP con scapy portable (lee PCAP, no captura con Npcap)
 - [x] Emulación localhost: server/agent como procesos de usuario en 127.0.0.1 (sin drivers)
-- [ ] Captura PCAP en vivo con Wireshark/Npcap — requiere admin para driver, sustituir por logs de server/audit y timestamps de agent
-- [ ] Sysmon — requiere admin para driver, sustituir por logs de proceso con PowerShell / Defender (sin instalar driver)
-- [ ] Ejecutar macro Office — solo en carpeta aislada del proyecto, con muestra benigna, nunca en archivos reales
+- [ ] Captura PCAP en vivo con Wireshark/Npcap - requiere admin para driver, sustituir por logs de server/audit y timestamps de agent
+- [ ] Sysmon - requiere admin para driver, sustituir por logs de proceso con PowerShell / Defender (sin instalar driver)
+- [ ] Ejecutar macro Office - solo en carpeta aislada del proyecto, con muestra benigna, nunca en archivos reales
 
 ## Estructura portable
 ```
@@ -62,3 +62,4 @@ powershell -ExecutionPolicy Bypass -File .\tools\run_portable.ps1 yara .\reglas.
 
 ## Borrado total
 Borrar carpeta `investigacion_c2_dect_lite\tools\` deja el sistema limpio, sin desinstaladores.
+

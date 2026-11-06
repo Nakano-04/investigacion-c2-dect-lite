@@ -1,5 +1,5 @@
-/*
-  Reglas YARA defensivas — investigación C2-DECT Lite
+﻿/*
+  Reglas YARA defensivas - investigación C2-DECT Lite
   Derivadas de Fase 1 inventario estático 2026-11-06.
   Fuentes: agent/transport.go, agent/catalog.go, agent/main.go,
   agent/scripting.go, server/profiles/malleable.go, docs/SCRIPTING_LITE.md
@@ -84,3 +84,4 @@ rule Office_Macro_Sospechosa_Generica
         1 of ($exec*) and
         1 of ($web*)
 }
+

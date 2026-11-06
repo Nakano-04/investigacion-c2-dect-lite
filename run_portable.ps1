@@ -1,4 +1,4 @@
-# Wrapper portable sin admin — uso local
+﻿# Wrapper portable sin admin - uso local
 # Ejemplos:
 #   .\run_portable.ps1 yara .\reglas.yar .\archivo
 #   .\run_portable.ps1 olevba .\muestra.docm
@@ -22,3 +22,4 @@ switch ($Tool.ToLower()) {
     "pcap"     { & $python (Join-Path $root "analizar_pcap_beacon.py") @Args }
     default    { Write-Host "Uso: yara | olevba | oleid | oelemeta | pcap"; exit 1 }
 }
+
