@@ -15,6 +15,10 @@ pasos = [
     ("Validacion completa", [PY, "scripts/validar_completa.py"]),
     ("Validacion escala 500/200", [PY, "scripts/validar_escala.py"]),
     ("Comparacion baselines", [PY, "scripts/comparar_reglas.py"]),
+    ("Prueba1 independiente", [PY, "scripts/prueba1_independiente.py"]),
+    ("Prueba2 comparacion", [PY, "scripts/prueba2_comparacion.py"]),
+    ("Prueba3 metricas", [PY, "scripts/prueba3_metricas.py"]),
+    ("Prueba4 robustez", [PY, "scripts/prueba4_robustez.py"]),
     ("Emulacion timing", [PY, "scripts/emular_beaconing.py"]),
     ("Ruido/proxy/TLS", [PY, "scripts/emular_ruido_proxy_tls.py"]),
 ]
