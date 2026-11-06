@@ -12,8 +12,8 @@ jobs:
           python3 --version
           pip3 install oletools scapy
       - name: Compilar reglas YARA
-        run: yara reglas.yar reglas.yar
+        run: yara reglas/reglas.yar reglas/reglas.yar
       - name: Tests
-        run: python3 -m unittest test_reglas -v
+        run: python3 -m unittest discover -s reglas -v
       - name: Validacion completa (set sintetico)
-        run: python3 validar_completa.py
+        run: python3 scripts/validar_completa.py

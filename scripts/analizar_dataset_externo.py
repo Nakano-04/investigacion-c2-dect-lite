@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Análisis defensivo de dataset externo MTA PCAP.
 Extrae: paquetes, protocolos, top IPs, TLS ClientHello (SNI, ALPN, JA3-like),
 y beaconing por flujo src->dst:puerto (intervalos).
@@ -8,7 +8,7 @@ import hashlib, statistics
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 PCAP = ROOT / "datasets_externos" / "mta" / "2026-02-28-traffic-analysis-exercise.pcap"
 
 from scapy.all import rdpcap, IP, TCP, UDP, DNS, Raw
@@ -67,3 +67,5 @@ for (src,dst), times in sorted(flows.items(), key=lambda x: -len(x[1]))[:10]:
         print(f" {src} -> {dst} n={len(times)} media={m:.1f}s sd={sd:.1f}s jitter%={sd/m*100:.1f}% min={min(iv):.1f} max={max(iv):.1f}")
 
 print("\nInterpretación: este PCAP es NetSupport Manager RAT a 45.131.214.85:443 según el ejercicio MTA. Comparar su beaconing/JA3 con nuestro modelo activity/uniform.")
+
+

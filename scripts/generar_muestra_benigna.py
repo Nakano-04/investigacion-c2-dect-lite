@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Genera muestra benigna .docx sin macros para análisis estático.
 No contiene VBA, no es ejecutable como macro, solo es un zip OOXML limpio.
 """
 import zipfile
 from pathlib import Path
 
-out = Path(__file__).resolve().parent / "benigno_limpio.docx"
+out = Path(__file__).resolve().parent.parent / "benigno_limpio.docx"
 out.parent.mkdir(exist_ok=True)
 
 content_types = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -23,3 +23,5 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
     z.writestr("word/document.xml", document)
 
 print(f"Creado: {out} ({out.stat().st_size} bytes)")
+
+

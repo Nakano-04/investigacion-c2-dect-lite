@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Comparación de métricas: nuestras reglas vs baselines ingenuas.
 Mide FP/FN en set sintético generado por validar_completa.py (si existe)
 o genera un mini-set local. Sin admin.
@@ -6,14 +6,14 @@ o genera un mini-set local. Sin admin.
 import subprocess, tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 YARA = ROOT / "tools" / "YARA" / "yara64.exe"
 exe = str(YARA) if YARA.exists() else "yara"
 
 baselines = {
     "baseline_solo_Shell": 'rule b { strings: $a="Shell" nocase condition: $a }',
     "baseline_solo_http": 'rule b { strings: $a="http" nocase condition: $a }',
-    "nuestras_reglas": (ROOT / "reglas.yar").read_text(encoding="utf-8"),
+    "nuestras_reglas": (ROOT / "reglas" / "reglas.yar").read_text(encoding="utf-8"),
 }
 
 limpios = [
@@ -46,3 +46,5 @@ for name, rule in baselines.items():
     prec = tp/(tp+fp) if tp+fp else 1.0
     print(f"- {name}: TP {tp}/4  FP {fp}/6  Precision {prec:.2f}")
 print("\nConclusión: baselines ingenuas tienen FP alto por palabras sueltas. Nuestras reglas exigen combinación, FP 0 en este set.")
+
+

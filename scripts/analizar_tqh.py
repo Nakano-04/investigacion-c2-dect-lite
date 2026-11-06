@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Análisis TQH-C2 features (dataset público externo).
 Compara intervalos/jitter/JA4 etiquetados vs nuestro modelo.
 """
@@ -6,7 +6,7 @@ import pyarrow.parquet as pq
 from pathlib import Path
 from collections import Counter
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 base = ROOT / "datasets_externos" / "tqh_features" / "features"
 
 for name in ["A_i30_j30.parquet", "A_i30_j0.parquet", "A_i300_j30.parquet", "C_i30_j30.parquet"]:
@@ -27,3 +27,5 @@ for name in ["A_i30_j30.parquet", "A_i30_j0.parquet", "A_i300_j30.parquet", "C_i
 
 print("\nConclusión: TQH-C2 varía intervalo (30/300/1800/3600) y jitter (0/30/70) exactamente como nuestro modelo. JA4/JA4S permiten fingerprint TLS sin descifrar, útil tras proxy TLS.")
 print("Contraste con MTA: C2 real NetSupport usa HTTP POST sobre 443 (no TLS), JA3 no aplica, timing 60s jitter 24% sí.")
+
+

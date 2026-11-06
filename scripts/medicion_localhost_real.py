@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Medición REAL localhost (sin admin, sin C2 real).
 Servidor HTTP benigno en 127.0.0.1:18080 + cliente que envía
 peticiones con intervalos del modelo jitter (base 2s reducida para demo).
@@ -11,7 +11,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
 random.seed(20261106)
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "medicion_real_localhost.csv"
 OUT.parent.mkdir(exist_ok=True)
 
@@ -58,3 +58,5 @@ mean=statistics.mean(intervals); sd=statistics.stdev(intervals)
 print(f"\nMedición REAL completada: {len(rows)} peticiones")
 print(f"Intervalo real medio: {mean:.2f}s  SD: {sd:.2f}s  Jitter: {sd/mean*100:.1f}%")
 print(f"CSV guardado: {OUT}")
+
+

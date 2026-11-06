@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Simulación defensiva: beacon mezclado con ruido, proxy y TLS.
 Genera PCAP sintético con tráfico benigno + beacon activity,
 y mide si el filtro por IP/puerto aísla el flujo.
@@ -8,7 +8,7 @@ import random, struct, statistics
 from pathlib import Path
 
 random.seed(20261106)
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "fase2_dinamico_ruido.pcap"
 
 def pkt_ip_udp(src, dst, sport, dport, payload):
@@ -43,3 +43,5 @@ print(f"PCAP ruido generado: {OUT.name}")
 print(f"Total paquetes: {len(packets)}  Beacon (127.0.0.1:8443): {len(beacon)}  Ruido (53/80/443): {len(ruido)}")
 print("Filtro por IP/puerto aísla beacon al 100% en este sintético.")
 print("En red real: proxy/TLS cifrado oculta contenido, solo queda metadata + destino. Requiere EDR/Zeek.")
+
+

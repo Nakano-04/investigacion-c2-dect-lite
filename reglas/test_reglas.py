@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Tests automatizados para reglas YARA - sin admin, sin ejecutar muestras."""
 import subprocess, tempfile, textwrap
 from pathlib import Path
 import unittest
 
-ROOT = Path(__file__).resolve().parent
-REGLAS = ROOT / "reglas.yar"
+ROOT = Path(__file__).resolve().parent.parent
+REGLAS = ROOT / "reglas" / "reglas.yar"
 
 def yara_scan(content_bytes, name="muestra.bin"):
     # Intenta yara-python si existe, si no usa CLI yara si está en PATH/tools
@@ -49,3 +49,4 @@ class TestReglas(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

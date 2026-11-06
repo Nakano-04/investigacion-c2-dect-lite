@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Analizador defensivo de PCAP para beaconing en lab.
 No ejecuta ni genera tráfico. Solo lee un PCAP ya capturado en lab aislado
@@ -71,3 +71,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

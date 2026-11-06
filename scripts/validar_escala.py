@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Prueba a escala sintética: 500 limpios con vocabulario legitimo
 que incluye palabras sueltas Shell/http/AutoOpen, y 200 positivos simulados.
 Mide FP/FN a escala. Sin admin, sin ejecutar muestras.
@@ -7,10 +7,10 @@ import random, shutil, subprocess, time, zipfile
 from pathlib import Path
 
 random.seed(20261106)
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 _yara_win = ROOT / "tools" / "YARA" / "yara64.exe"
 YARA = str(_yara_win) if _yara_win.exists() else (shutil.which("yara") or "yara")
-REGLAS = ROOT / "reglas.yar"
+REGLAS = ROOT / "reglas" / "reglas.yar"
 BASE = ROOT / "escala_dinamica"
 LIMPIO = BASE / "limpio"; POS = BASE / "positivo"
 for d in (LIMPIO, POS): d.mkdir(parents=True, exist_ok=True)
@@ -57,3 +57,5 @@ print(f"Escala: positivo 200 -> TP archivos {tp_files} ({tp_files/200*100:.1f}%)
 print(f"Precisión escala: {tp_files/(tp_files+fp_files) if tp_files+fp_files else 1:.3f}")
 if err1.strip(): print("stderr limpio:",err1[:500])
 if err2.strip(): print("stderr pos:",err2[:500])
+
+

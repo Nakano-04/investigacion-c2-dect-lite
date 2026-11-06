@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 random.seed(20261106)
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 OUTDIR = ROOT / "fase2_dinamico"
 OUTDIR.mkdir(exist_ok=True)
 
@@ -125,4 +125,6 @@ Para evidencia con tráfico real, ejecutar e2e en lab aislado y re-analizar PCAP
 """
 (OUTDIR / "RESULTADOS_FASE2.md").write_text(report, encoding="utf-8")
 print(report)
+
+
 
