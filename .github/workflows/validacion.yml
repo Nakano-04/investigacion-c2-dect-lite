@@ -1,0 +1,19 @@
+name: Validacion YARA y tests
+on: [push, pull_request]
+jobs:
+  validacion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar YARA
+        run: sudo apt-get update && sudo apt-get install -y yara
+      - name: Instalar Python y oletools
+        run: |
+          python3 --version
+          pip3 install oletools scapy
+      - name: Compilar reglas YARA
+        run: yara reglas.yar reglas.yar
+      - name: Tests
+        run: python3 -m unittest test_reglas -v
+      - name: Validacion completa (set sintetico)
+        run: python3 validar_completa.py
