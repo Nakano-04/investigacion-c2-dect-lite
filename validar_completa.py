@@ -7,7 +7,9 @@ import csv, hashlib, random, shutil, subprocess, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-YARA = ROOT / "tools" / "YARA" / "yara64.exe"
+# Cross-platform: Windows portable tools/YARA/yara64.exe o yara en PATH (Linux CI)
+_yara_win = ROOT / "tools" / "YARA" / "yara64.exe"
+YARA = str(_yara_win) if _yara_win.exists() else (shutil.which("yara") or "yara")
 REGLAS = ROOT / "reglas.yar"
 VAL = ROOT / "validacion_dinamica"
 LIMPIO = VAL / "set_limpio"

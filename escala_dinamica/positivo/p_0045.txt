@@ -1,0 +1,1 @@
+/api/update /v1/telemetry /api/v2/events
